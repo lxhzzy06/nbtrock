@@ -5,8 +5,8 @@ edition = "2021"
 authors = ["lxhzzy@outlook.com"]
 description = "Read And Write Bedrock NBT"
 license = "MIT"
-repository = "https://github.com/lxhzzy/nbtrock"
-homepage = "https://github.com/lxhzzy/nbtrock"
+repository = "https://github.com/lxhzzy06/nbtrock"
+homepage = "https://github.com/lxhzzy06/nbtrock"
 keywords = ["Minecraft", "Bedrock", "NBT"]
 categories = ["encoding"]
 
