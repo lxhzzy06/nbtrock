@@ -1,0 +1,36 @@
+[package]
+name = "nbtrock"
+version = "0.1.0"
+edition = "2021"
+authors = ["lxhzzy@outlook.com"]
+description = "Read And Write Bedrock NBT"
+license = "MIT"
+repository = "https://github.com/lxhzzy/nbtrock"
+homepage = "https://github.com/lxhzzy/nbtrock"
+keywords = ["Minecraft", "Bedrock", "NBT"]
+categories = ["encoding"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+byteorder = "1.4.3"
+thiserror = "1.0.43"
+ritelinked = { version = "0.3.2", features = ["serde"] }
+serde = { version = "1.0.173", features = ["derive"], optional = true }
+
+wasm-bindgen = { version = "0.2.8", optional = true }
+js-sys = { version = "0.3.6", optional = true }
+web-sys = { version = "0.3.6", optional = true }
+serde-wasm-bindgen = { version = "0.4", optional = true }
+
+console_error_panic_hook = { version = "0.1.7", optional = true }
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+wasm-bindgen-test = { version = "0.3.0" }
+
+[features]
+default = []
+serde_rs = ["serde"]
+wasm = ["wasm-bindgen", "js-sys", "web-sys", "serde_rs", "serde-wasm-bindgen"]
+panic_hook = ["wasm", "console_error_panic_hook"]
